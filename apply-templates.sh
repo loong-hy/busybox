@@ -39,7 +39,7 @@ for version; do
 
 	for variant in "${variants[@]}"; do
 		export variant
-
+		export arch="$BASHBREW_ARCH"
 		echo "processing $version/$variant ..."
 
 		mkdir -p "$version/$variant"
