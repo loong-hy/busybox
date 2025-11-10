@@ -4,7 +4,7 @@
 # PLEASE DO NOT EDIT IT DIRECTLY.
 #
 
-FROM alpine:3.22
+FROM lcr.loongnix.cn/library/alpine:3.22
 
 RUN set -eux; \
 	apk add --no-cache \
@@ -137,6 +137,8 @@ RUN set -eux; \
 		mips*)                 ARCH='mips'    ;; \
 		ppc*)                  ARCH='powerpc' ;; \
 		riscv64)               ARCH='riscv64' ;; \
+		loong64)               ARCH='loong64' ;; \
+		loongarch64)           ARCH='loongarch64' ;; \
 		s390x)                 ARCH='s390'    ;; \
 		*) echo >&2 "error: unknown architecture: '$distroArch'"; exit 1 ;; \
 	esac; \

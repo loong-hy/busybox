@@ -4,7 +4,7 @@
 # PLEASE DO NOT EDIT IT DIRECTLY.
 #
 
-FROM debian:trixie-slim
+FROM lcr.loongnix.cn/library/debian:forky-slim
 
 RUN set -eux; \
 	apt-get install --update -y \
@@ -162,6 +162,13 @@ RUN set -eux; \
 			;; \
 			\
 # TODO s390x ? (needs BR2_TOOLCHAIN_BUILDROOT_UCLIBC support)
+			\
+		loong64) \
+			setConfs="$setConfs \
+				BR2_loong64=y \
+				BR2_LOONG_64=y \
+			"; \
+			;; \
 			\
 		*) \
 			echo >&2 "error: unsupported architecture '$dpkgArch'!"; \

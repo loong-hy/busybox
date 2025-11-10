@@ -4,7 +4,7 @@
 # PLEASE DO NOT EDIT IT DIRECTLY.
 #
 
-FROM debian:trixie-slim
+FROM lcr.loongnix.cn/library/debian:forky-slim
 
 RUN set -eux; \
 	apt-get install --update -y \
@@ -126,6 +126,8 @@ RUN set -eux; \
 		mips*)                 ARCH='mips'    ;; \
 		ppc*)                  ARCH='powerpc' ;; \
 		riscv64)               ARCH='riscv64' ;; \
+		loong64)               ARCH='loong64' ;; \
+		loongarch64)           ARCH='loongarch64' ;; \
 		s390x)                 ARCH='s390'    ;; \
 		*) echo >&2 "error: unknown architecture: '$distroArch'"; exit 1 ;; \
 	esac; \
